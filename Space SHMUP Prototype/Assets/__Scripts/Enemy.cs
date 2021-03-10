@@ -10,14 +10,14 @@ public class Enemy : MonoBehaviour
     //establishes base speed value
     public float speed = 20f;
 
-    //private variable that allows Enemy script to store reference to BoundsCheck script (did not add underscore because of convention in Textbook handout)
-    private BoundsCheck bndCheck;
+    //private variable that allows Enemy script to store reference to BoundsCheck script 
+    private BoundsCheck _bndCheck;
 
    
     void Awake()
     {
         //Searches for BoundsCheck script component attached to Gameobject, if not found, set to null
-        bndCheck = GetComponent<BoundsCheck>();
+        _bndCheck = GetComponent<BoundsCheck>();
     } 
 
 
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
         Move();
 
         //If enemy leaves screen on left, right, or bottom, destroy it
-        if ( bndCheck != null && (bndCheck.offDown || bndCheck.offLeft || bndCheck.offRight) )
+        if (_bndCheck != null && (_bndCheck.offDown || _bndCheck.offLeft || _bndCheck.offRight) )
         {            
             Destroy( gameObject );
         } 

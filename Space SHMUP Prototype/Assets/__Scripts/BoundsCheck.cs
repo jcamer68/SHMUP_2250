@@ -25,7 +25,6 @@ public class BoundsCheck : MonoBehaviour
     [HideInInspector]
     public bool offRight, offLeft, offUp, offDown;
 
-
     void Awake()
     {
         //camHeight is set to the distance from the origin of the world to the top or bottom edge
@@ -47,7 +46,6 @@ public class BoundsCheck : MonoBehaviour
         offRight = offLeft = offUp = offDown = false;
 
         //The following four if statements checks if out of bounds in four directions
-
         //checks if off the right screen side 
         if (pos.x > camWidth - radius)
         {

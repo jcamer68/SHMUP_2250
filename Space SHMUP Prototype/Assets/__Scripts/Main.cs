@@ -17,13 +17,13 @@ public class Main : MonoBehaviour
     public float enemyDefaultPadding = 1.5f;
 
     //private variable that allows script to store a reference to BoundsCheck script
-    private BoundsCheck bndCheck;
+    private BoundsCheck _bndCheck;
 
     void Awake()
     {
         S = this;
         //Set bndCheck to reference the BoundsCheck component on this GameObject
-        bndCheck = GetComponent<BoundsCheck>();
+        _bndCheck = GetComponent<BoundsCheck>();
 
         //Invoke SpawnEnemy() once (in 2 seconds, based on default values)
         Invoke("SpawnEnemy", 1f/enemySpawnPerSecond );
@@ -50,12 +50,12 @@ public class Main : MonoBehaviour
         //Set initial position for the spawned Enemy
         Vector3 pos = Vector3.zero;
         //retrieves max and min x values for random placement
-        float xMin = -bndCheck.camWidth + enemyPadding;
-        float xMax = bndCheck.camWidth - enemyPadding;
+        float xMin = -_bndCheck.camWidth + enemyPadding;
+        float xMax = _bndCheck.camWidth - enemyPadding;
         //spawns from random position on x axis
         pos.x = Random.Range(xMin, xMax );
         //spawns from top of the game scene
-        pos.y = bndCheck.camHeight + enemyPadding;
+        pos.y = _bndCheck.camHeight + enemyPadding;
         //set these positional values to the enemy
         go.transform.position = pos;
 

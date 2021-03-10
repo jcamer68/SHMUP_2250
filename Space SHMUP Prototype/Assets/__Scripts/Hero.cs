@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-
     [Header("Set in Inspector")]
     //Fields used to control the movement of the ship
 
@@ -15,8 +14,7 @@ public class Hero : MonoBehaviour
     public float pitchMult = 30;
 
     //holds the Gameobject that was last triggered (by collision)
-    private GameObject lastTriggerGo = null;
-
+    private GameObject _lastTriggerGo = null;
 
     // Update is called once per frame
     void Update()
@@ -52,14 +50,14 @@ public class Hero : MonoBehaviour
 
         //if lastTriggerGo is same as go (current triggering GameObject)
         //This collision is ignored as a duplicate, and function returns
-        if (go == lastTriggerGo)
+        if (go == _lastTriggerGo)
         {
             return;
         }
 
         //assign go to lastTriggerGo so it is updated before next time
         //OnTriggerEnter() is called
-        lastTriggerGo = go;
+        _lastTriggerGo = go;
 
         //if tag of GameObject is set to "Enemy"
         if (go.tag == "Enemy")

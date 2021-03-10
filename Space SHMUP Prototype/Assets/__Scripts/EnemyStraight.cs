@@ -10,6 +10,7 @@ public class EnemyStraight : Enemy
     //which is only supposed to go straight down 
     public override void Move()
     {
+
         //Creates a 3D Vector position equal to the Tranform of the GameObject
         Vector3 pos = transform.position;
 
@@ -19,5 +20,6 @@ public class EnemyStraight : Enemy
 
         //sets the Transform of the GameObject equal to the changed pos value 
         transform.position = pos;
+
     }
 }

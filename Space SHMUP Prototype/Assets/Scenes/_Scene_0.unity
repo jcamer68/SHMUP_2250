@@ -447,9 +447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  rollmult: -45
+  rollMult: -45
   pitchMult: 30
-  lastTriggerGo: {fileID: 0}
 --- !u!4 &740303881
 Transform:
   m_ObjectHideFlags: 0
@@ -587,7 +586,7 @@ MonoBehaviour:
   prefabEnemies:
   - {fileID: 8976139510302543296, guid: 14bff2d9c71c447a5a408d1afc699679, type: 3}
   - {fileID: 5555027749319025197, guid: 99dfe32c0468242c788e30cdf89a02d3, type: 3}
-  enemySpawnPerSecond: 0.4
+  enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
 --- !u!114 &790081825
 MonoBehaviour:
